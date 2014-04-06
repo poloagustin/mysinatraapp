@@ -30,7 +30,8 @@ get '/about' do
   slim :about
 end
 get '/contact' do
-  slim :contact
+  # slim :contact
+  erb :contact
 end
 
 get '/set/:name' do
@@ -42,7 +43,8 @@ get '/get/hello' do
 end
 
 get '/login' do
-  slim :login
+  # slim :login
+  erb :login
 end
 
 post '/login' do
@@ -50,7 +52,8 @@ post '/login' do
     session[:admin] = true
     redirect to('/songs')
   else
-    slim :login
+    # slim :login
+    erb :login
   end
 end
 
