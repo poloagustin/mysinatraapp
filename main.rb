@@ -11,6 +11,13 @@ configure :development do
 	set :password, 'sinatra'
 end
 
+configure :production do
+	DataMapper.setup(:default, ENV['DATABASE_URL'])
+	enable :sessions
+	set :username, 'frank'
+	set :password, 'sinatra'
+end
+
 get('/styles.css'){ scss :styles }
 
 get '/' do
