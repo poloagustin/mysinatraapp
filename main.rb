@@ -21,7 +21,8 @@ end
 get('/styles.css'){ scss :styles }
 
 get '/' do
-  slim :home
+  # slim :home
+  erb :home
 end
 
 get '/about' do
