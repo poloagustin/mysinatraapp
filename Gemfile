@@ -1,4 +1,4 @@
-source :rubygems
+source "http:rubygems.com"
 gem "sinatra"
 gem "slim"
 gem "sass"
