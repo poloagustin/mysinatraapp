@@ -1,6 +1,6 @@
-require 'bundler/setup'
+# require 'bundler/setup'
 require 'sinatra'
-require 'sinatra/reloader' if development?
+# require 'sinatra/reloader' if development?
 require 'sass'
 require 'slim'
 require './song'
