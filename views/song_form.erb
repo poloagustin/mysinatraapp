@@ -3,7 +3,7 @@
 <label for="length">Length:</label>
 <input id="length" type="number" name="song[length]" value="<%=@song.length%>"/>
 <label for="released_on">Date(mm/dd/yyyy):</label>
-<input#released_on type="text" name="song[released_on]" value="<%=@song.released_on.strftime("%m/%d/%Y") if @song.released_on%>"/>
+<input id="released_on" type="text" name="song[released_on]" value="<%=@song.released_on.strftime("%m/%d/%Y") if @song.released_on%>"/>
 <label for="lyrics">Lyrics:</label>
 <textarea id="lyrics" name="song[lyrics]"><%=@song.lyrics%></textarea#lyrics>
 <input type="submit" value="Save Song"/>
