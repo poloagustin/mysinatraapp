@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'sass'
 require 'slim'
 require './song'
+require 'bundler/setup'
 
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
@@ -21,8 +22,8 @@ end
 get('/styles.css'){ scss :styles }
 
 get '/' do
-  # slim :home
-  erb :home
+  slim :home
+  # erb :home
 end
 
 get '/about' do
@@ -30,8 +31,8 @@ get '/about' do
   slim :about
 end
 get '/contact' do
-  # slim :contact
-  erb :contact
+  slim :contact
+  # erb :contact
 end
 
 get '/set/:name' do
@@ -43,8 +44,8 @@ get '/get/hello' do
 end
 
 get '/login' do
-  # slim :login
-  erb :login
+  slim :login
+  # erb :login
 end
 
 post '/login' do
@@ -52,8 +53,8 @@ post '/login' do
     session[:admin] = true
     redirect to('/songs')
   else
-    # slim :login
-    erb :login
+    slim :login
+    # erb :login
   end
 end
 
