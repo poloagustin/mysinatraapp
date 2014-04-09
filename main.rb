@@ -1,9 +1,9 @@
+require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sass'
 require 'slim'
 require './song'
-require 'bundler/setup'
 
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
