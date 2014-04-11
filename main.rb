@@ -1,4 +1,5 @@
-# require 'bundler/setup'
+require 'rubygems'
+require 'bundler/setup'
 require 'sinatra'
 # require 'sinatra/reloader' if development?
 require 'sass'
@@ -19,7 +20,9 @@ configure :production do
   set :password, 'sinatra'
 end
 
-get('/styles.css'){ scss :styles }
+get '/styles.css' do 
+	scss :styles
+end
 
 get '/' do
   # slim :home
@@ -63,4 +66,3 @@ get '/logout' do
   session.clear
   redirect to('/login')
 end
-
