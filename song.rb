@@ -19,8 +19,8 @@ DataMapper.finalize
 get '/songs' do
 	halt(401,'Not Authorized') unless session[:admin]
 	@songs = Song.all
-	# slim :songs
-	erb :songs
+	slim :songs
+	# erb :songs
 end
 
 post '/songs' do
@@ -32,22 +32,22 @@ end
 get '/songs/new' do
 	halt(401,'Not Authorized') unless session[:admin]
 	@song = Song.new
-	# slim :new_song
-	erb :new_song
+	slim :new_song
+	# erb :new_song
 end
 
 get '/songs/:id' do
 	halt(401,'Not Authorized') unless session[:admin]
 	@song = Song.get(params[:id])
-	# slim :show_song
-	erb :show_song
+	slim :show_song
+	# erb :show_song
 end
 
 get '/songs/:id/edit' do
 	halt(401,'Not Authorized') unless session[:admin]
 	@song = Song.get(params[:id])
-	# slim :edit_song
-	erb :edit_song
+	slim :edit_song
+	# erb :edit_song
 end
 
 put '/songs/:id' do
@@ -62,4 +62,3 @@ delete '/songs/:id' do
 	Song.get(params[:id]).destroy
 	redirect to('/songs')
 end
-

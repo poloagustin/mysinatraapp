@@ -1,6 +1,7 @@
+require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
-require 'sinatra/reloader' if development?
+# require 'sinatra/reloader' if development?
 require 'sass'
 require 'slim'
 require './song'
@@ -19,21 +20,23 @@ configure :production do
   set :password, 'sinatra'
 end
 
-get('/styles.css'){ scss :styles }
+get '/styles.css' do 
+	scss :styles
+end
 
 get '/' do
-  # slim :home
-  erb :home
+  slim :home
+  # erb :home
 end
 
 get '/about' do
   @title = "All About This WebSite"
-  # slim :about
-  erb :about
+  slim :about
+  # erb :about
 end
 get '/contact' do
-  # slim :contact
-  erb :contact
+  slim :contact
+  # erb :contact
 end
 
 get '/set/:name' do
@@ -45,8 +48,8 @@ get '/get/hello' do
 end
 
 get '/login' do
-  # slim :login
-  erb :login
+  slim :login
+  # erb :login
 end
 
 post '/login' do
@@ -54,8 +57,8 @@ post '/login' do
     session[:admin] = true
     redirect to('/songs')
   else
-    # slim :login
-    erb :login
+    slim :login
+    # erb :login
   end
 end
 

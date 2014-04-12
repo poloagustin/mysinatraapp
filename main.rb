@@ -25,18 +25,18 @@ get '/styles.css' do
 end
 
 get '/' do
-  # slim :home
-  erb :home
+  slim :home
+  # erb :home
 end
 
 get '/about' do
   @title = "All About This WebSite"
-  # slim :about
-  erb :about
+  slim :about
+  # erb :about
 end
 get '/contact' do
-  # slim :contact
-  erb :contact
+  slim :contact
+  # erb :contact
 end
 
 get '/set/:name' do
@@ -48,8 +48,8 @@ get '/get/hello' do
 end
 
 get '/login' do
-  # slim :login
-  erb :login
+  slim :login
+  # erb :login
 end
 
 post '/login' do
@@ -57,8 +57,8 @@ post '/login' do
     session[:admin] = true
     redirect to('/songs')
   else
-    # slim :login
-    erb :login
+    slim :login
+    # erb :login
   end
 end
 
@@ -66,3 +66,4 @@ get '/logout' do
   session.clear
   redirect to('/login')
 end
+
